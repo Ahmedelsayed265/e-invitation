@@ -396,6 +396,30 @@
       color: #8d6b3e;
     }
 
+    #letter .couple {
+      margin: 16px 0 18px;
+      display: grid;
+      gap: 6px;
+      font-size: 15px;
+      line-height: 1.4;
+      color: #6e5838;
+    }
+
+    #letter .couple b {
+      display: block;
+      margin-top: 2px;
+      font-family: "Aref Ruqaa", serif;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.45;
+      color: #8a5a28;
+    }
+
+    #letter .couple .on {
+      font-size: 14px;
+      color: #a08b6e;
+    }
+
     #letter .letter + .letter { margin-top: 6px; }
 
     #letter .divider { margin: 8px 0; }
@@ -707,7 +731,7 @@
 <body>
   <main class="phone">
     <div class="frame" aria-hidden="true"></div>
-    <audio id="music" src="sound.mp3" loop preload="auto"></audio>
+    <audio id="music" src="sound-new.mp3" loop preload="auto"></audio>
     <section class="intro" id="intro">
       <img class="poster" src="intro-poster-v2.jpg" alt="">
       <video id="introVideo" src="intro-v2.mp4" poster="intro-poster-v2.jpg" playsinline muted preload="auto"></video>
@@ -738,7 +762,9 @@
           <div class="divider"><span></span><em></em><span></span></div>
           <p class="letter">بارك الله لهما وبارك عليهما وجمع بينهما في خير.</p>
           <p class="letter">في ليلة زاهية يضوي الفرح عالي سماها وبقلوب يملؤها الفرح وتغمرها السعادة</p>
-          <p class="letter details">بصادق الود والمحبة أتشرف بدعوتكم<br>لحضور حفل زفاف ابني ..<br><span class="mark">الشاب عمر عبدالله باداود</span><br>على<br>الآنسة شيماء سالم بازمول<br><span class="mark">وذلك بمشيئة الله تعالى يوم الاثنين</span><br>29/5/1448 هـ الموافق 9/11/2026 م</p>
+          <p class="letter details">بصادق الود والمحبة أتشرف بدعوتكم<br>لحضور حفل زفاف ابني ..</p>
+          <p class="couple"><b>عمر عبدالله باداود</b><span class="on">على</span><b>شيماء سالم بازمول</b></p>
+          <p class="letter details"><span class="mark">وذلك بمشيئة الله تعالى يوم الاثنين</span><br>29/5/1448 هـ الموافق 9/11/2026 م</p>
           <div class="divider"><span></span><em></em><span></span></div>
           <div class="families">
             <div><b>آل باداود</b></div>
@@ -907,9 +933,35 @@
       if (!intro.classList.contains("is-gone")) nextBtn.hidden = true;
     }
 
+    function scrollToPanel(panel) {
+      const start = invite.scrollTop;
+      const distance = panel.offsetTop - start;
+      if (Math.abs(distance) < 2) return;
+      if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        invite.scrollTop = panel.offsetTop;
+        return;
+      }
+      const duration = 1100;
+      const t0 = performance.now();
+      invite.style.scrollSnapType = "none";
+      invite.style.scrollBehavior = "auto";
+      function step(now) {
+        const p = Math.min(1, (now - t0) / duration);
+        const ease = p < 0.5 ? 2 * p * p : 1 - Math.pow(-2 * p + 2, 2) / 2;
+        invite.scrollTop = start + distance * ease;
+        if (p < 1) {
+          requestAnimationFrame(step);
+          return;
+        }
+        invite.style.scrollSnapType = "";
+        invite.style.scrollBehavior = "";
+      }
+      requestAnimationFrame(step);
+    }
+
     nextBtn.addEventListener("click", () => {
       const next = panels[Math.min(currentIndex() + 1, panels.length - 1)];
-      next.scrollIntoView({ behavior: "smooth", block: "start" });
+      scrollToPanel(next);
     });
 
     invite.addEventListener("scroll", () => {
