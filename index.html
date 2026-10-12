@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="color-scheme" content="light only">
   <meta name="theme-color" content="#f3efe8">
-  <title>أفراح عمر وشيماء</title>
+  <title>أفراح الباداود</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Great+Vibes&family=Tajawal:wght@300;400;500&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&family=Great+Vibes&family=Tajawal:wght@300;400;500&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       color-scheme: light only;
@@ -20,9 +23,13 @@
       --line: rgba(155, 134, 102, 0.45);
     }
 
-    * { box-sizing: border-box; color-scheme: light only; }
+    * {
+      box-sizing: border-box;
+      color-scheme: light only;
+    }
 
-    html, body {
+    html,
+    body {
       margin: 0;
       height: 100%;
       overflow: hidden;
@@ -109,8 +116,17 @@
     }
 
     @keyframes pearlFloat {
-      0%, 100% { opacity: 0.94; transform: translateX(-50%) translateY(0); }
-      50% { opacity: 1; transform: translateX(-50%) translateY(-5px); }
+
+      0%,
+      100% {
+        opacity: 0.94;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      50% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-5px);
+      }
     }
 
     .ornament {
@@ -182,10 +198,26 @@
     }
 
     @keyframes pearlGoldSheen {
-      0%, 32% { left: -45%; opacity: 0; }
-      42% { opacity: 0.72; }
-      64% { left: 118%; opacity: 0; }
-      100% { left: 118%; opacity: 0; }
+
+      0%,
+      32% {
+        left: -45%;
+        opacity: 0;
+      }
+
+      42% {
+        opacity: 0.72;
+      }
+
+      64% {
+        left: 118%;
+        opacity: 0;
+      }
+
+      100% {
+        left: 118%;
+        opacity: 0;
+      }
     }
 
     .next-btn,
@@ -225,7 +257,9 @@
       -webkit-overflow-scrolling: touch;
     }
 
-    .invite::-webkit-scrollbar { width: 0; }
+    .invite::-webkit-scrollbar {
+      width: 0;
+    }
 
     .panel {
       min-height: 100%;
@@ -338,7 +372,9 @@
       color: #5e564e;
     }
 
-    .letter + .letter { margin-top: 10px; }
+    .letter+.letter {
+      margin-top: 10px;
+    }
 
     .families {
       display: grid;
@@ -369,7 +405,9 @@
       padding-bottom: 18%;
     }
 
-    #letter .inner { width: min(100%, 268px); }
+    #letter .inner {
+      width: min(100%, 268px);
+    }
 
     #letter .ar-name {
       font-size: 34px;
@@ -377,8 +415,14 @@
       letter-spacing: 0.02em;
     }
 
-    #letter .lockup { margin-bottom: 2px; }
-    #letter .wa { margin: 2px 0; font-size: 18px; }
+    #letter .lockup {
+      margin-bottom: 2px;
+    }
+
+    #letter .wa {
+      margin: 2px 0;
+      font-size: 18px;
+    }
 
     #letter .letter {
       font-size: 15px;
@@ -420,9 +464,13 @@
       color: #a08b6e;
     }
 
-    #letter .letter + .letter { margin-top: 6px; }
+    #letter .letter+.letter {
+      margin-top: 6px;
+    }
 
-    #letter .divider { margin: 8px 0; }
+    #letter .divider {
+      margin: 8px 0;
+    }
 
     #letter .families {
       margin-top: 2px;
@@ -430,7 +478,9 @@
       letter-spacing: 0.06em;
     }
 
-    #letter .families .rule { height: 28px; }
+    #letter .families .rule {
+      height: 28px;
+    }
 
     .kicker {
       margin: 0 0 10px;
@@ -597,7 +647,9 @@
       box-shadow: 0 8px 24px rgba(80, 60, 40, 0.08);
     }
 
-    .next-btn[hidden] { display: none; }
+    .next-btn[hidden] {
+      display: none;
+    }
 
     .sound-btn {
       position: absolute;
@@ -616,12 +668,24 @@
       place-items: center;
     }
 
-    .sound-btn svg { width: 20px; height: 20px; }
-    .sound-btn .off { display: none; }
-    .sound-btn.is-muted .on { display: none; }
-    .sound-btn.is-muted .off { display: block; }
+    .sound-btn svg {
+      width: 20px;
+      height: 20px;
+    }
 
-    .panel .inner > * {
+    .sound-btn .off {
+      display: none;
+    }
+
+    .sound-btn.is-muted .on {
+      display: none;
+    }
+
+    .sound-btn.is-muted .off {
+      display: block;
+    }
+
+    .panel .inner>* {
       animation-duration: 1.25s;
       animation-timing-function: cubic-bezier(.22, 1, .36, 1);
       animation-fill-mode: both;
@@ -629,17 +693,45 @@
       animation-play-state: paused;
     }
 
-    .panel.is-in .inner > * { animation-play-state: running; }
+    .panel.is-in .inner>* {
+      animation-play-state: running;
+    }
 
-    .panel .inner > *:nth-child(1) { animation-delay: 0.08s; }
-    .panel .inner > *:nth-child(2) { animation-delay: 0.22s; }
-    .panel .inner > *:nth-child(3) { animation-delay: 0.36s; }
-    .panel .inner > *:nth-child(4) { animation-delay: 0.5s; }
-    .panel .inner > *:nth-child(5) { animation-delay: 0.64s; }
-    .panel .inner > *:nth-child(6) { animation-delay: 0.78s; }
-    .panel .inner > *:nth-child(7) { animation-delay: 0.92s; }
-    .panel .inner > *:nth-child(8) { animation-delay: 1.06s; }
-    .panel .inner > *:nth-child(9) { animation-delay: 1.2s; }
+    .panel .inner>*:nth-child(1) {
+      animation-delay: 0.08s;
+    }
+
+    .panel .inner>*:nth-child(2) {
+      animation-delay: 0.22s;
+    }
+
+    .panel .inner>*:nth-child(3) {
+      animation-delay: 0.36s;
+    }
+
+    .panel .inner>*:nth-child(4) {
+      animation-delay: 0.5s;
+    }
+
+    .panel .inner>*:nth-child(5) {
+      animation-delay: 0.64s;
+    }
+
+    .panel .inner>*:nth-child(6) {
+      animation-delay: 0.78s;
+    }
+
+    .panel .inner>*:nth-child(7) {
+      animation-delay: 0.92s;
+    }
+
+    .panel .inner>*:nth-child(8) {
+      animation-delay: 1.06s;
+    }
+
+    .panel .inner>*:nth-child(9) {
+      animation-delay: 1.2s;
+    }
 
     .panel .name {
       animation-name: e-pen;
@@ -676,43 +768,101 @@
     }
 
     @keyframes e-soft {
-      from { opacity: 0; transform: translateY(16px); filter: blur(6px); }
-      to { opacity: 1; transform: none; filter: blur(0); }
+      from {
+        opacity: 0;
+        transform: translateY(16px);
+        filter: blur(6px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+        filter: blur(0);
+      }
     }
 
     @keyframes e-pen {
-      from { opacity: 0; clip-path: inset(0 0 0 100%); transform: translateY(14px); }
-      22% { opacity: 1; }
-      to { opacity: 1; clip-path: inset(0 0 0 0); transform: none; }
+      from {
+        opacity: 0;
+        clip-path: inset(0 0 0 100%);
+        transform: translateY(14px);
+      }
+
+      22% {
+        opacity: 1;
+      }
+
+      to {
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+        transform: none;
+      }
     }
 
     @keyframes e-bloom {
-      from { opacity: 0; transform: scale(.7) rotate(-6deg); filter: blur(7px); }
-      to { opacity: 1; transform: none; filter: blur(0); }
+      from {
+        opacity: 0;
+        transform: scale(.7) rotate(-6deg);
+        filter: blur(7px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+        filter: blur(0);
+      }
     }
 
     @keyframes e-num {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: none; }
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
     }
 
     @keyframes e-track {
-      from { opacity: 0; letter-spacing: 0.42em; }
-      to { opacity: 1; letter-spacing: 0.08em; }
+      from {
+        opacity: 0;
+        letter-spacing: 0.42em;
+      }
+
+      to {
+        opacity: 1;
+        letter-spacing: 0.08em;
+      }
     }
 
     @keyframes e-line {
-      from { opacity: 0; transform: scaleX(0); }
-      to { opacity: 1; transform: none; }
+      from {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
     }
 
     @keyframes e-btn {
-      from { opacity: 0; transform: translateY(14px) scale(.9); }
-      to { opacity: 1; transform: none; }
+      from {
+        opacity: 0;
+        transform: translateY(14px) scale(.9);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .panel .inner > * {
+      .panel .inner>* {
         animation: none !important;
         opacity: 1 !important;
         transform: none !important;
@@ -728,6 +878,7 @@
     }
   </style>
 </head>
+
 <body>
   <main class="phone">
     <div class="frame" aria-hidden="true"></div>
@@ -758,7 +909,8 @@
           <p class="letter">في ليلة زاهية يضوي الفرح عالي سماها وبقلوب يملؤها الفرح وتغمرها السعادة</p>
           <p class="letter details">بصادق الود والمحبة أتشرف بدعوتكم<br>لحضور حفل زفاف ابني ..</p>
           <p class="couple"><b>عمر عبدالله باداود</b><span class="on">على</span><b>شيماء سالم بازمول</b></p>
-          <p class="letter details"><span class="mark">وذلك بمشيئة الله تعالى يوم الاثنين</span><br>29/5/1448 هـ الموافق 9/11/2026 م</p>
+          <p class="letter details"><span class="mark">وذلك بمشيئة الله تعالى يوم الاثنين</span><br>29/5/1448 هـ الموافق
+            9/11/2026 م</p>
           <div class="divider"><span></span><em></em><span></span></div>
           <div class="families">
             <div><b>آل باداود</b></div>
@@ -801,7 +953,8 @@
           <p class="kicker">الموقع</p>
           <h2 class="place-name">قاعة شغف</h2>
           <p class="place-area">الإسكان الجنوبي</p>
-          <a class="map-btn" href="https://maps.app.goo.gl/aAZLaeySVqAbGbz67?g_st=ic" target="_blank" rel="noopener">افتح الخريطة</a>
+          <a class="map-btn" href="https://maps.app.goo.gl/aAZLaeySVqAbGbz67?g_st=ic" target="_blank"
+            rel="noopener">افتح الخريطة</a>
         </div>
       </section>
 
@@ -889,7 +1042,7 @@
       intro.classList.add("is-playing");
       music.volume = 0.55;
       const musicPlay = music.play();
-      if (musicPlay && typeof musicPlay.catch === "function") musicPlay.catch(() => {});
+      if (musicPlay && typeof musicPlay.catch === "function") musicPlay.catch(() => { });
       const play = video.play();
       if (play && typeof play.catch === "function") play.catch(reveal);
     }
@@ -963,4 +1116,5 @@
     }, { passive: true });
   </script>
 </body>
+
 </html>
